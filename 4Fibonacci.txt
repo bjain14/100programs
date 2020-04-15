@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+    int f=0,s=1,n,nextterm;
+    printf("Enter the no of terms for the series:");
+    scanf("%d",&n);
+    
+    for(int i=1;i<=n;++i)
+    {
+       printf("%d ",f);    
+       nextterm=f+s;
+       f=s;
+       s=nextterm;
+    }
+    return 0;
+}
