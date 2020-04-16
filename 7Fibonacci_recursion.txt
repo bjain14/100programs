@@ -1,0 +1,12 @@
+n=int(input("Enter the no of terms:"))
+def fibo(x):
+    if(x<=1):
+        return x
+    else:
+        return (fibo(x-1)+fibo(x-2))
+
+if(n<=0):
+    print("Enter a positive value")
+else:
+    for i in range(n):
+        print(fibo(i))
