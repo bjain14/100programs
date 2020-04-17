@@ -1,0 +1,14 @@
+a,b=map(int,input("Enter 2 numbers: ").split())
+def gcd(x,y):
+    if(x>=y):
+        smaller=y
+    else:
+        smaller=x 
+        
+    for i in range(1,smaller+1):
+        if((x%i==0)and(y%i==0)):
+            g=i
+    
+    return g
+            
+print("The greatest common factor of the 2 numbers is:",gcd(a,b))            
