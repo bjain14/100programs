@@ -1,0 +1,27 @@
+a= []
+n = int(input("Enter size of list: \t"))
+for i in range(n):
+    numbers = int(input("Enter any number: \t"))
+    a.append(numbers)
+ 
+item = int(input("\nEnter item to be searched: \t"))
+
+def binarySearch(arr, f,l,item): 
+    while(f<=l):
+        m = f+ (l-l)//2; 
+        if(a[m]==item):
+            return m+1
+            break
+        elif(a[m]>item):
+            l=m-1
+        else:
+            f=m+1
+        
+    return -1
+    
+result = binarySearch(a, 0, len(a)-1, item) 
+if result != -1: 
+    print("Element is present at position %d" % result) 
+else: 
+    print("Element is not present in list")
+    
