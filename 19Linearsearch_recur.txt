@@ -1,0 +1,22 @@
+lst = []
+n= int(input("Enter size of list: \t"))
+for i in range(n):
+    numbers = int(input("Enter any number: \t"))
+    lst.append(numbers)
+ 
+item= int(input("\nEnter number to search: \t"))
+ 
+def reclinear(lst,f,l,item):
+    if(l<f): 
+        return -1
+    if(lst[f]==item): 
+        return f+1 
+    if(lst[l]==item): 
+        return l+1 
+    return reclinear(lst,f+1,n-1,item) 
+  
+index = reclinear(lst,0,n-1,item) 
+if index != -1: 
+    print("Element",item,"is present at index %d" %(index)) 
+else: 
+    print("Element %d is not present" %(item)) 
