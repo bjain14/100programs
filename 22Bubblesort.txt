@@ -1,0 +1,21 @@
+a=[]
+global n
+n= int(input("Enter the no of elements: \t"))
+for i in range(n):
+    numbers = int(input("Enter any number: "))
+    a.append(numbers)
+    
+print("The elements are:")
+print(a)
+    
+def bubblesort(a):
+    for p in range(n):
+        for c in range(n-p-1):
+            if(a[c]>a[c+1]):
+                temp=a[c]
+                a[c]=a[c+1]
+                a[c+1]=temp    
+    print("The sorted elements are:")
+    print(a)
+    
+result=bubblesort(a)
