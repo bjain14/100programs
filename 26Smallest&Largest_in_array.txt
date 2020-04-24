@@ -1,0 +1,20 @@
+a=[]
+global n
+n= int(input("Enter the no of elements: \t"))
+for i in range(n):
+    numbers = int(input("Enter any number: "))
+    a.append(numbers)
+    
+largest=a[0]
+smallest=a[0]
+for i in range(len(a)):
+    if(a[i]>largest):
+        largest=a[i]
+        
+    if(a[i]<smallest):
+        smallest=a[i]
+        
+print("The largest element of the array is: ",largest)
+print("The smallest element of the array is: ",smallest)
+#OR print(max(a))
+#OR print(min(a))
