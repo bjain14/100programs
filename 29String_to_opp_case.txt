@@ -1,0 +1,13 @@
+str=input("Enter a string: ")
+def oppCase(str):
+    if(str.isupper() is True):
+        str=str.lower()
+        
+    else:
+        str=str.upper()
+        
+    return str
+    
+#oppCase(str)
+print("The converted string is:",oppCase(str))
+#OR print(str.swapcase())
