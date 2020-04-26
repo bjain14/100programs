@@ -1,0 +1,21 @@
+#include<stdio.h> 
+int Sub(int x, int y) 
+{ 
+    while (y != 0) 
+    { 
+        int difference = ~x & y;   
+        x = x ^ y;
+        y = difference << 1; 
+    } 
+    return x; 
+} 
+int main() 
+{ 
+    int a,b;
+    printf("Enter the first number:");
+    scanf("%d",&a);
+    printf("Enter the second number:");
+    scanf("%d",&b);
+    printf("The difference between the two numbers is %d", Sub(a,b)); 
+    return 0; 
+} 
