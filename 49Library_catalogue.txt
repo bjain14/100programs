@@ -1,0 +1,68 @@
+#include <stdio.h>
+struct Library
+{
+    int access_no,year;
+    float price;
+    char author_name[30],title[40],publisher_name[30];
+};
+int main()
+{
+    int i,j,n;
+    char ar_nm;
+    printf("Enter the no. of books you want to add\n");
+    scanf("%d",&n);
+    struct Library l[n];
+    
+    printf("1 Add book information\n2 Display book information\n3 List all books of given author\n4 Exit");
+    printf ("\n\nEnter your choice : ");
+    scanf("%d",&j);
+    switch (j)
+    {
+    case 1:
+    
+    for (i=0;i<n;i++)
+    {
+    printf ("Enter access_no: ");
+    scanf ("%d",&l[i].access_no);
+    printf ("Enter year of publication: ");
+    scanf ("%d",&l[i].year);
+    printf ("Enter price : ");
+    scanf ("%f",&l[i].price);
+    printf ("Enter author name: ");
+    scanf ("%s",l[i].author_name);
+    printf ("Enter title of the book: ");
+    scanf ("%s",l[i].title);
+    printf ("Enter publisher name: ");
+    scanf ("%s",l[i].publisher_name);
+    printf ("Your response has been recorded.");
+    }
+    break;
+    
+    case 2:
+    printf("The entered information is:\n");
+    for(i=0;i<n;i++)
+    {
+    printf ("book name : %s",l[i].title);
+    printf ("author name : %s",l[i].author_name);
+    printf ("publisher name : %s",l[i].publisher_name);
+    printf ("price : %f",l[i].price);
+    printf ("year of publication: %d",l[i].year);
+    printf ("access no : %d",l[i].access_no);
+    }
+    break;
+
+    case 3:
+    printf ("Enter author name : ");
+    scanf ("%s",&ar_nm);
+    for (i=0;i<n;i++)
+    {
+    if (ar_nm == l[i].author_name)
+    printf ("%s %s %s %f %d %d",l[i].title,l[i].author_name,l[i].publisher_name,l[i].price,l[i].year,l[i].access_no);
+    }
+    break;
+
+    case 4:
+    exit (0);
+    }
+    return 0;
+}
