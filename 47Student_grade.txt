@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+struct Student 
+
+{
+	
+	int sno;
+	
+	char stud_name[30];
+	
+	float marks;
+
+};
+
+int main()
+
+{
+    
+	int n;
+    
+	float sum=0,avg;
+    
+	printf("Enter the number of students");
+    	
+	scanf("%d",&n);
+    
+	struct Student s[n];
+    
+	printf("Enter the details of the students:\n");
+    
+	for(int i=0;i<n;i++)
+    	
+	{
+        
+	   printf("Enter serial no,name and marks:");
+        
+	   scanf("%d %s %f",&s[i].sno,s[i].stud_name,&s[i].marks);
+        
+	   sum=sum+s[i].marks;
+    
+	}
+    
+	avg=sum/n;
+    
+    
+	printf("Details of the students whose marks are above average are:\n");
+    
+	for(int i=0;i<n;i++)
+    
+	{
+       
+	    if(s[i].marks>=avg)
+        
+           		printf("%d %s %f",s[i].sno,s[i].stud_name,s[i].marks); 
+        
+    
+	}
+    
+	return 0;
+
+}
