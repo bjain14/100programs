@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#define max 50
+int main(void)
+{
+    char str[max],temp;
+    
+    printf("Enter a string:");
+    scanf("%s",str);
+    int n = strlen(str);
+    printf("String before sorting is %s \n", str);
+
+   for(int i = 0; i < n-1; i++) 
+   {
+      for(int j = i+1; j < n; j++) 
+      {
+         if(str[i]>str[j]) 
+         {
+            temp=str[i];
+            str[i]=str[j];
+            str[j]=temp;
+         }
+      }
+   }
+   printf("String after sorting is  %s \n", str);
+   return 0;
+}
+/******************************************************************************
+PYTHON:
+str=input("Enter a string:")
+print("".join(sorted(str)))
+*******************************************************************************/
