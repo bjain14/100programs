@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int result;
+    char str1[30],str2[30];
+    printf("Enter string 1:");
+    scanf("%s",str1);
+    printf("Enter string 2:");
+    scanf("%s",str2);
+    result=strcmp(str1,str2);
+    if(result==0)
+        printf("%s and %s are identical strings.",str1,str2);
+    else
+        printf("%s and %s are not identical .",str1,str2);
+
+    return 0;
+}
+
+/************************************************************************************
+ PYTHON:
+ str1 is str2
