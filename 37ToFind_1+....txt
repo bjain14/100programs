@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+    int n;
+    float sum=0.0;
+    printf("Enter the number of terms for addition in the following form:\n1+1/2+1/3+1/4+....\n");
+    scanf("%d",&n);
+    for(double i=1;i<=n;i++)
+        {
+        sum=sum+(1/i);
+       	}
+        
+    printf("The sum is:%f",sum);
+
+    return 0;
+}
