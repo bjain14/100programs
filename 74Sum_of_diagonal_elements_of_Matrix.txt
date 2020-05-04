@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main()
+{
+    int r1,c1,sum=0;
+    printf("Enter the number of rows and columns of 1st matrix:");
+    scanf("%d  %d",&r1,&c1);
+    int a[r1][c1];
+    
+    printf("Enter the elements of the matrix:");
+    for(int i=0;i<r1;i++)
+    {
+      for(int j=0;j<c1;j++)
+        scanf("%d",&a[i][j]);
+    }
+    
+    printf("The matrix is:\n");
+    for(int i=0;i<r1;i++)
+    {
+      for(int j=0;j<c1;j++)
+        printf("%d  ",a[i][j]);
+      printf("\n");
+    }
+    
+    for (int i=0;i<r1;i++) 
+        { 
+            for (int j=0;j<c1;j++)
+            {
+                if(i==j)
+                    sum=sum+a[i][j];
+            }
+        }
+        printf("The sum of the diagonal elements of the matrix is:%d",sum); 
+    return 0;
+}
