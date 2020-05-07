@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include<stdlib.h>
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+struct Node *t,*start=NULL,*end=NULL,*next,*p,*q,*r;
+
+void traverse()
+{
+    if(start==NULL)
+        printf("List is empty");
+    else
+    {
+        printf("List is:\n");
+        p=start;
+        while(p!=0)
+        {
+            printf("%d ",p->data);
+            p=p->next;
+        }
+    }
+}
+
+void create(int A[],int n)
+{
+    int i;
+    start=(struct Node *)malloc(sizeof(struct Node));
+    start->data=A[0];
+    start->next=NULL;
+    end=start;
+    for(i=1;i<n;i++)
+    {
+       t=(struct Node *)malloc(sizeof(struct Node)); 
+       t->data=A[i];
+       t->next=NULL;
+       end->next=t;
+       end=t;
+    }
+    
+}
+void reverse()
+{
+    p=start;
+    q=NULL;
+    r=NULL;
+    while(p!=NULL)
+    {
+        r=q;
+        q=p;
+        p=p->next;
+        q->next=r;
+    }
+    start=q;
+}
+
+int main()
+{
+    int A[]={10,20,30,40,50};
+    create(A,5);
+    reverse(start);
+    traverse(start);
+    return 0;
+}
