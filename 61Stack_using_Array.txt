@@ -1,0 +1,61 @@
+
+
+#include <iostream>
+using namespace std;
+#define max 10
+class Stack
+{
+    public:
+    int item,top=-1,a[max];
+    void push();
+    void pop();
+    void traverse();
+};
+
+void Stack::push()
+{
+    if(top==max)
+        cout<<"Stack overflow.\n";
+    else
+    {
+        cout<<"Enter item to be inserted:\n";
+        cin>>item;
+        top++;
+        a[top]=item;
+    }
+}
+
+void Stack::pop()
+{
+    if(top==-1)
+        cout<<"Stack underflow.\n";
+    else
+        top--;
+}
+
+void Stack::traverse()
+{
+    for(int i=0;i<=top;i++)
+        cout<<a[i]<<"\n";
+}
+
+int main()
+{
+    int n;
+    char j;
+    Stack obj;
+    do{
+    cout<<"Press 1 for push\n 2 for pop\n 3 for traverse\n";
+    cin>>n;
+    if(n==1)
+        obj.push();
+    else if(n==2)
+        obj.pop();
+    else
+        obj.traverse();
+    
+    cout<<"Press 'y'to continue\n";
+	cin>>j;
+    }while(j=='y');
+    return 0;
+}
