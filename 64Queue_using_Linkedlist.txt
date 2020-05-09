@@ -1,0 +1,83 @@
+#include<iostream>
+using namespace std;
+struct qnode
+{
+	int data;
+	qnode *next;
+};
+qnode *newnode,*front=NULL,*rear=NULL,*temp;
+int n=0;
+
+void getnode()
+{
+	newnode=new qnode;
+	cout<<"Enter an element:\n";
+	cin>>newnode->data;
+	newnode->next=NULL;
+}
+
+void traverse()
+{
+  if(front==NULL)
+        cout<<"Queue is empty\n";
+    else
+    {
+        cout<<"Queue is:\n";
+        temp=front;
+        while(temp!=0)
+        {
+            cout<<temp->data<<"\t";
+            temp=temp->next;
+        }
+        cout<<"\n";
+    }  
+}
+
+void Enqueue()
+{
+	getnode();
+	if(front==NULL)//Queue is empty
+	{   front=rear=newnode;
+	    n++;
+	    traverse();
+    }
+	else
+	{
+	rear->next=newnode;
+	rear=newnode;
+	n++;
+	traverse();
+	}
+}
+
+void Dequeue()
+{   
+    if(front==NULL)
+        cout<<"Queue is empty\n";
+    else
+    {
+        front=front->next;
+        n--;
+        traverse();
+    }
+}
+
+main()
+{
+	int ch;
+	char ch1;
+	do{
+		
+			cout<<"1.Enqueue\n2.Dequeue\nEnter your choice"<<endl;
+			cin>>ch;
+			if(ch==1) Enqueue();
+			else if(ch==2) Dequeue();
+			else cout<<"Invalid choice\n";
+			
+		cout<<"press y or Y to continue"<<endl; 
+		cin>>ch1; 
+	} while(ch1=='y'||ch1=='Y');
+}
+
+
+
