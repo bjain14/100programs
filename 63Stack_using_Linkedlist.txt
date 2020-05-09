@@ -1,0 +1,90 @@
+#include<iostream>
+using namespace std;
+struct Stacknode
+{
+    int data;
+    Stacknode *next;
+};
+Stacknode *top=NULL,*bottom=NULL,*newnode,*temp;
+int n=0;
+
+void getnode()
+{
+   newnode=new Stacknode;//dynamic memory allocation in heap
+   cout<<"Enter an element:\n";
+   cin>>newnode->data;
+   newnode->next=NULL;
+}
+
+void traverse()
+{
+    temp=bottom;
+    cout<<"The elements in the stack are:\n"
+	while(temp!=NULL)
+	{   
+		cout<<temp->data<<endl;
+		temp=temp->next;
+	}
+}
+
+void push()
+{
+    getnode();
+    top->next=newnode;
+    top=newnode;
+    n++;
+    traverse();
+}
+
+void pop()
+{
+    if(bottom==top)//When stack contains a single element
+    {
+	    bottom=NULL;
+	    top=NULL;
+	    n--;
+    }
+    else
+    {
+        temp=bottom;
+        while(temp->next!=top)
+            temp=temp->next;
+        temp->next=NULL;
+        top=temp;
+        n--;
+        traverse();
+    }
+}
+
+void Iemptystack()
+{
+	getnode();
+	bottom=newnode;
+	top=newnode;
+	n++;
+}
+
+main()
+{
+    int ch;
+	char ch1;
+	do{
+		if(top==NULL) { 
+		cout<<"check"<<endl;
+			Iemptystack();
+		}
+		else{
+			cout<<"1.push\n2.pop\nEnter your choice"<<endl;
+			cin>>ch;
+			if(ch==1) push();
+			else if(ch==2) pop();
+			else if(ch>2) cout<<"invalid choice";
+		}
+		cout<<"Press y or Y to continue"<<endl; cin>>ch1; 
+	} while(ch1=='y'||ch1=='Y');
+	
+
+}
+
+
+
