@@ -1,0 +1,72 @@
+#include<iostream>
+using namespace std;
+#define Max 10
+class Queue
+{
+	public:
+		int item,a[Max],i,front,rear;
+		Queue()
+		{
+			front=0;
+			rear=0;
+		}
+		void enqueue();
+		void dequeue();
+		void traverse();
+};
+
+void Queue::traverse()
+{
+    cout<<"The elements in queue are:\n";
+    for(int i=front;i<rear;i++)
+        cout<<a[i]<<"\t";
+    cout<<"\n";
+}
+
+void Queue::enqueue()
+{
+    if(rear==Max)
+        cout<<"Queue is full\n";
+    else
+    {
+        cout<<"Enter element to be inserted in queue:\n";
+        cin>>item;
+        a[rear]=item;
+        rear++;
+        traverse();
+    }
+}
+
+void Queue::dequeue()
+{
+    if(front==rear)
+        cout<<"Queue is empty\n";
+    else
+    {
+        front++;
+        traverse();
+    }
+}
+
+main()
+{
+    Queue obj;
+    int j;
+    char ch;
+    do
+    {
+        cout<<"Press 1 for insertion\n2 for deletion\n3 for traversal\n";
+        cin>>j;
+        if(j==1)
+            obj.enqueue();
+       
+        else if(j==2)
+            obj.dequeue();
+        else
+            obj.traverse();
+        
+    cout<<"Press 'y' to continue\n";
+	cin>>ch;
+	}while(ch=='y');
+
+}
